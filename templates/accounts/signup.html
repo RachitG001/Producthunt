@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+{% if error %}
+</br>
+{{error}}
+</br>
+</br>
+{% endif%}
+<form method="post" action="{% url 'signup_page' %}">
+{% csrf_token %}
+<h1>Signup here</h1></br>
+Username:
+<br/>
+<input type="text" name="username"/>
+</br>
+Password:
+<br/>
+<input type="password" name="password1"/>
+</br>
+Confirm Password:
+<br/>
+<input type="password" name="password2"/>
+</br>
+</br>
+<input class="btn btn-primary" type="submit" name="Signup"/>
+</form>
+{% endblock %}
