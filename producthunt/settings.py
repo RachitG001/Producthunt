@@ -56,7 +56,7 @@ ROOT_URLCONF = 'producthunt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,10 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'producthuntdb',
-        'USER' : 'postgres',
-        'PASSWORD' : 'docker',
-        'HOST' : 'localhost',
-        'PORT' : '5432'
+        'USER': 'postgres',
+        'PASSWORD': 'docker',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -122,14 +122,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'producthunt/static/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'producthunt/static/')
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = '/account/login'

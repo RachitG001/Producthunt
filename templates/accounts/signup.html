@@ -2,16 +2,14 @@
 {% load crispy_forms_tags %}
 
 {% block content%}
-
-{% if error %}
-</br>
-{{error}}
-</br>
-</br>
-{% endif%}
 <form method="post" action="{% url 'signup_page' %}">
 {% csrf_token %}
-<h1>Signup here</h1></br>
+<h1 align="center">Signup here</h1></br>
+{% if error %}
+<div class="alert alert-warning" role="alert">
+  {{error}}
+</div>
+{% endif%}
 Username:
 <br/>
 <input type="text" name="username"/>
